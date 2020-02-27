@@ -2,6 +2,8 @@ version: '3.6'
 services:
   postgres:
     image: postgres:11.4
+    ports:
+      - "5432:5432"
     restart: always
     environment:
       POSTGRES_USER: rkaadmin
@@ -9,6 +11,7 @@ services:
       POSTGRES_DB: rka
     volumes:
     - db_data:/var/lib/postgresql/data
+    - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
   graphql-engine:
     image: hasura/graphql-engine:v1.2.0-beta.1
     ports:
