@@ -1,0 +1,3 @@
+# endpoint: https://hasura-auth-slack-back.herokuapp.com/
+endpoint: http://localhost:8080
+admin-secret: yyp
